@@ -1,5 +1,84 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* 
+html {
+  scroll-snap-type: y mandatory;
+} */
 
+* {
+  padding: 0;
+  margin: 0;
+  color : white;
+}
 
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+.pages {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.page {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  bottom: -100%;
+  transition: bottom .7s;
+
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+ 
+}
+
+.page:first-child {
+bottom: 0;
+}
+
+.first {
+  background-color: #dc322f;
+}
+
+.second {
+  background-color: #073642;
+}
+
+.third {
+  background-color: #cb4b16;
+}
+
+.pagination {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.pagination>li {
+  list-style: none;
+  height: 20px;
+  width: 20px;
+  background: #000000;
+  border-radius: 50%;
+  margin-top: 10px;
+  transition: background .7s;
+}
+
+.pagination>li.active {
+  background: #ffffff;
+}
+
+.title {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+}
